@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <form onsubmit="processForm(event)">
+    <ion-list lines="full" ion-no-margin ion-no-padding>
+      <ion-item>
+        <ion-label position="stacked">Name<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Phone</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Stream<ion-text color="danger">*</ion-text></ion-label>
+        <ion-select value="programmingTech" okText="Ok" cancelText="Dismiss">
+          <ion-select-option value="programmingTech">Programming/Tech</ion-select-option>
+          <ion-select-option value="digitalMarketing">Digital Marketing</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Gender</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio slot="start" color="success" value="Male"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio slot="start" color="success" value="Female"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-item>
+        <ion-label position="stacked">About</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Experience</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Add Student</ion-button>
+    </div>
+    <div class="ion-padding">
+      <ion-button color="danger" expand="block" (click)="closeModal()" class="ion-no-margin">Close</ion-button>
+    </div>
+  </form>
+</ion-content> -->
+
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input placeholder="Enter Name" [(ngModel)]="user.name"></ion-input>
+  </ion-item>
+  <ion-input placeholder="Enter Email" [(ngModel)]="user.email"></ion-input>
+  <ion-input placeholder="Enter Phone" [(ngModel)]="user.phone"></ion-input>
+  <ion-input placeholder="Select Stream" [(ngModel)]="user.stream"></ion-input>
+  <ion-input placeholder="Select Gender" [(ngModel)]="user.gender"></ion-input>
+  <ion-input placeholder="About" [(ngModel)]="user.about"></ion-input>
+  <ion-input placeholder="Experience" [(ngModel)]="user.experience"></ion-input>
+
+  <ion-button expand="block" *ngIf="! userID" (click)="save()">Add Student</ion-button>
+  <ion-button expand="block" *ngIf="userID" (click)="update()">Update Student</ion-button>
+  <ion-button expand="block" *ngIf="userID" (click)="delete()">Delete Student</ion-button>
+  <ion-button expand="block" color="danger" (click)="closeModal()">Close</ion-button>
+
+</ion-content>
